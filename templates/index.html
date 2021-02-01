@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title>OMBd Lookup</title>
+    </head>
+    <body>
+        <h1>OMDb Search</h1>
+        <hr>
+        <form action="/" method="post">
+            <b>Enter the title: </b>
+            <input type="text" name="movie_title" placeholder="Title">
+            <input type="submit" value="Search">
+        </form>
+        </br>
+        <b>Movie details: </b></br>
+        {% for para in details %}
+            </br>{{para}}
+        {% endfor %}
+
+        {% if poster|length  %}
+            </br><img src="{{poster}}">
+        {% endif %}
+
+        {% if errors|length  %}
+            {{errors}}
+        {% endif %}
+    </body>
+</html>
